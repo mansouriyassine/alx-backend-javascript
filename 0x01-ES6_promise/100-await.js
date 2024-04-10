@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // 100-await.js
-import { uploadPhoto, createUser } from './utils';
+import { uploadPhoto, createUser } from './utils.js';
 
 /**
  * Calls uploadPhoto and createUser functions asynchronously, returns an object with
