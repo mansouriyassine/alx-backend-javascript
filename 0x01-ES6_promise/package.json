@@ -1,17 +1,30 @@
 {
   "name": "0x01-es6_promise",
   "version": "1.0.0",
-  "description": "0x01-ES6_promise",
-  "main": "0-main.js",
+  "description": "Project for ES6 Promises by Yassine Mansouri",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env node $npm_config_file"
+    "lint": "eslint .",
+    "dev": "node $npm_config_file",
+    "build": "babel src -d dist"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mansouriyassine/0x01-es6_promise.git"
+  },
+  "author": "Yassine Mansouri",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mansouriyassine/0x01-es6_promise/issues"
+  },
+  "homepage": "https://github.com/mansouriyassine/0x01-es6_promise#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "eslint": "^7.30.0",
     "cross-env": "^7.0.3"
-  }
+  },
+  "dependencies": {}
 }
