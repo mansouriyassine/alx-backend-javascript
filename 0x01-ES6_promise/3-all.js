@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // 3-all.js
-import { uploadPhoto, createUser } from './utils';
+import { uploadPhoto, createUser } from './utils.js';
 
 /**
  * Handles the profile signup process by waiting for both uploadPhoto and createUser
