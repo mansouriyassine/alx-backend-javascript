@@ -1,5 +1,4 @@
 #!/usr/bin/node
-// 3-all.js
 import { uploadPhoto, createUser } from './utils.js';
 
 /**
@@ -11,8 +10,14 @@ function handleProfileSignup() {
         .then(values => {
             console.log(`${values[0].body} ${values[1].firstName} ${values[1].lastName}`);
         })
-        .catch(() => {
-            console.log('Signup system offline');
+        .catch(errors => {
+            errors.forEach(error => {
+                if (error instanceof Error) {
+                    console.error(error.message);
+                } else {
+                    console.error('Unknown error occurred');
+                }
+            });
         });
 }
 
