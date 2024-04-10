@@ -2,12 +2,12 @@
 // 1-promise.js
 
 /**
- * Returns a promise that either resolves with success
- * information or rejects with an error.
- *
- * @param {boolean} success - A boolean indicating whether
- * the promise should resolve or reject.
- * @return {Promise<Object>} The promise object.
+ * Returns a promise that either resolves with success information or
+ * rejects with an error message based on the input boolean.
+ * 
+ * @param {boolean} success - Determines whether the promise resolves or rejects.
+ * @return {Promise<{status: number, body: string}> | Promise<Error>} - A promise 
+ * that resolves with an object or rejects with an error.
  */
 function getFullResponseFromAPI(success) {
     return new Promise((resolve, reject) => {
