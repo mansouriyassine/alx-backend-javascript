@@ -1,11 +1,6 @@
 #!/usr/bin/node
-export default function getNeighborhoodsList() {
-  this.sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
+import getNeighborhoodsList from './2-arrow.js';
 
-  this.addNeighborhood = (newNeighborhood) => {
-    console.log('Before adding:', this.sanFranciscoNeighborhoods);
-    this.sanFranciscoNeighborhoods.push(newNeighborhood);
-    console.log('After adding:', this.sanFranciscoNeighborhoods);
-    return this.sanFranciscoNeighborhoods;
-  };
-}
+const neighborhoodsList = new getNeighborhoodsList();
+const res = neighborhoodsList.addNeighborhood('Noe Valley');
+console.log(JSON.stringify(res));
