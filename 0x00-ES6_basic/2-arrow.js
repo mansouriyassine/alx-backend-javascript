@@ -1,6 +1,12 @@
 #!/usr/bin/node
-import getNeighborhoodsList from './2-arrow.js';
-
-const neighborhoodsList = new getNeighborhoodsList();
-const res = neighborhoodsList.addNeighborhood('Noe Valley');
-console.log(JSON.stringify(res));
+export default function getNeighborhoodsList() {
+    const sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
+  
+    return {
+      sanFranciscoNeighborhoods,
+      addNeighborhood(newNeighborhood) {
+        sanFranciscoNeighborhoods.push(newNeighborhood);
+        return sanFranciscoNeighborhoods;
+      }
+    };
+  }  
