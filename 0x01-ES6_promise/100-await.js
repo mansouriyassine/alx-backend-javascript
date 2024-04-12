@@ -9,13 +9,13 @@ import { uploadPhoto, createUser } from './utils.js';
  * @return {Promise<Object>} An object with photo and user details or nulls.
  */
 async function asyncUploadUser() {
-    try {
-        const photo = await uploadPhoto();
-        const user = await createUser();
-        return { photo, user };
-    } catch (error) {
-        return { photo: null, user: null };
-    }
+  try {
+    const photo = await uploadPhoto();
+    const user = await createUser();
+    return { photo, user };
+  } catch (error) {
+    return { photo: null, user: null };
+  }
 }
 
 export default asyncUploadUser;

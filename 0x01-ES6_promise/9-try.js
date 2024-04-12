@@ -1,15 +1,15 @@
 #!/usr/bin/node
 export default function guardrail(mathFunction) {
-    const queue = [];
+  const queue = [];
 
-    try {
-        const result = mathFunction();
-        queue.push(result);
-    } catch (error) {
-        queue.push(error.message);
-    }
+  try {
+    const result = mathFunction();
+    queue.push(result);
+  } catch (error) {
+    queue.push(error.message);
+  }
 
-    queue.push('Guardrail was processed');
+  queue.push('Guardrail was processed');
 
-    return queue;
+  return queue;
 }
