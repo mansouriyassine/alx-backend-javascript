@@ -1,5 +1,5 @@
 #!/usr/bin/node
-import { uploadPhoto, createUser } from './utils.js';
+import { uploadPhoto, createUser } from './utils';
 
 /**
  * Handles the profile signup process by waiting for both uploadPhoto and createUser
