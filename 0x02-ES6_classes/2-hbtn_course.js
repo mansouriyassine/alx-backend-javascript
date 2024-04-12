@@ -1,9 +1,10 @@
 #!/usr/bin/node
+#!/usr/bin/node
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this.validateString(name, 'Name');
-    this._length = this.validateNumber(length, 'Length');
-    this._students = this.validateStudents(students);
+    this._name = HolbertonCourse.validateString(name, 'Name');
+    this._length = HolbertonCourse.validateNumber(length, 'Length');
+    this._students = HolbertonCourse.validateStudents(students);
   }
 
   get name() {
@@ -11,7 +12,7 @@ class HolbertonCourse {
   }
 
   set name(newName) {
-    this._name = this.validateString(newName, 'Name');
+    this._name = HolbertonCourse.validateString(newName, 'Name');
   }
 
   get length() {
@@ -19,7 +20,7 @@ class HolbertonCourse {
   }
 
   set length(newLength) {
-    this._length = this.validateNumber(newLength, 'Length');
+    this._length = HolbertonCourse.validateNumber(newLength, 'Length');
   }
 
   get students() {
@@ -27,24 +28,24 @@ class HolbertonCourse {
   }
 
   set students(newStudents) {
-    this._students = this.validateStudents(newStudents);
+    this._students = HolbertonCourse.validateStudents(newStudents);
   }
 
-  validateString(value, fieldName) {
+  static validateString(value, fieldName) {
     if (typeof value !== 'string') {
       throw new TypeError(`${fieldName} must be a string`);
     }
     return value;
   }
 
-  validateNumber(value, fieldName) {
-    if (typeof value !== 'number' || isNaN(value)) {
+  static validateNumber(value, fieldName) {
+    if (typeof value !== 'number' || Number.isNaN(value)) {
       throw new TypeError(`${fieldName} must be a number`);
     }
     return value;
   }
 
-  validateStudents(students) {
+  static validateStudents(students) {
     if (!Array.isArray(students) || students.some((student) => typeof student !== 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
