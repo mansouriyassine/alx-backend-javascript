@@ -1,5 +1,5 @@
 #!/usr/bin/node
-import Currency from './3-currency';
+import Currency from './3-currency'; // Remove the file extension and the curly braces
 
 class Pricing {
     constructor(amount, currency) {
