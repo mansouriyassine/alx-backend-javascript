@@ -9,7 +9,7 @@
  * @return {Promise<Error>} A promise that rejects with an error message.
  */
 export default function uploadPhoto(fileName) {
-    return new Promise((resolve, reject) => {
-        reject(new Error(`${fileName} cannot be processed`));
-    });
+  return new Promise((resolve, reject) => {
+    reject(new Error(`${fileName} cannot be processed`));
+  });
 }
