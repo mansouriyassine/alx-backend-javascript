@@ -1,5 +1,6 @@
 #!/usr/bin/node
-import Currency from './3-currency'; // Remove the file extension and the curly braces
+// eslint-disable-next-line no-unused-vars
+import Currency from './3-currency';
 
 class Pricing {
     constructor(amount, currency) {
