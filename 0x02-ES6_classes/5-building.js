@@ -1,11 +1,7 @@
 class Building {
   constructor(sqft) {
     if (this.constructor === Building) {
-<<<<<<< HEAD
       throw new Error('Abstract classes cannot be instantiated directly.');
-=======
-      throw new Error('Class extending Building must override evacuationWarningMessage');
->>>>>>> 9bc89a9e2e635aae02d53b282d60ddac48877489
     }
     this._sqft = sqft;
   }
@@ -19,7 +15,6 @@ class Building {
   }
 }
 
-<<<<<<< HEAD
 class ResidentialBuilding extends Building {
   constructor(sqft, residents) {
     super(sqft);
@@ -36,6 +31,3 @@ class ResidentialBuilding extends Building {
 }
 
 export { Building, ResidentialBuilding };
-=======
-export default Building;
->>>>>>> 9bc89a9e2e635aae02d53b282d60ddac48877489
