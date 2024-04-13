@@ -9,7 +9,7 @@ function handleProfileSignup() {
       return `${photo.body} ${user.firstName} ${user.lastName}`;
     })
     .catch(() => {
-      console.error('Signup system offline');
+      console.log('Signup system offline');
     });
 }
 
