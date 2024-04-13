@@ -12,7 +12,8 @@ class Building {
   get sqft() {
       return this._sqft;
   }
-
+  
+    // eslint-disable-next-line class-methods-use-this
   evacuationWarningMessage() {
       throw new Error('Method "evacuationWarningMessage" must be implemented');
   }
