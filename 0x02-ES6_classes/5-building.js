@@ -1,8 +1,13 @@
-class Building {
+export default class Building {
   constructor(sqft) {
     if (this.constructor === Building) {
-      throw new Error('Abstract classes cannot be instantiated directly.');
+      throw new Error('Cannot instantiate abstract class Building');
     }
+
+    if (this.evacuationWarningMessage === undefined) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
+
     this._sqft = sqft;
   }
 
@@ -11,23 +16,6 @@ class Building {
   }
 
   evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+    throw new Error('Must override evacuationWarningMessage');
   }
 }
-
-class ResidentialBuilding extends Building {
-  constructor(sqft, residents) {
-    super(sqft);
-    this._residents = residents;
-  }
-
-  get residents() {
-    return this._residents;
-  }
-
-  evacuationWarningMessage() {
-    return `Attention! Please evacuate the residential building. Total residents: ${this._residents}`;
-  }
-}
-
-export { Building, ResidentialBuilding };
