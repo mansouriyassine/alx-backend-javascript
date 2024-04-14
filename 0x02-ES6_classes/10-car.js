@@ -1,6 +1,3 @@
-#!/usr/bin/node
-const cloneCarMethod = Symbol('cloneCar');
-
 class Car {
   constructor(brand, motor, color) {
     this._brand = brand;
@@ -8,24 +5,16 @@ class Car {
     this._color = color;
   }
 
-  get brand() {
-    return this._brand;
-  }
-
-  get motor() {
-    return this._motor;
-  }
-
-  get color() {
-    return this._color;
-  }
-
-  [cloneCarMethod]() {
-    return new Car(this._brand, this._motor, this._color);
-  }
-
   cloneCar() {
-    return this[cloneCarMethod]();
+    const clone = Object.create(Object.getPrototypeOf(this));
+
+    for (const prop in this) {
+      if (this.hasOwnProperty(prop) && prop.startsWith('_')) {
+        clone[prop] = this[prop];
+      }
+    }
+
+    return clone;
   }
 }
 
