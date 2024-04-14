@@ -8,8 +8,9 @@ class Car {
   cloneCar() {
     const clone = Object.create(Object.getPrototypeOf(this));
 
-    for (const prop in this) {
-      if (this.hasOwnProperty(prop) && prop.startsWith('_')) {
+    const ownProps = Object.getOwnPropertyNames(this);
+    for (const prop of ownProps) {
+      if (prop.startsWith('_')) {
         clone[prop] = this[prop];
       }
     }
