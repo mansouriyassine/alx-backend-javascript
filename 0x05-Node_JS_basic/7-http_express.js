@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+const fs = require('fs').promises;
 const countStudents = require('./3-read_file_async');
 
 const app = express();
@@ -11,20 +11,19 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.get('/students', (req, res) => {
+app.get('/students', async (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   res.write('This is the list of our students\n');
 
   const databasePath = req.query.database || 'database.csv';
 
-  countStudents(databasePath)
-    .then(() => {
-      res.end();
-    })
-    .catch((error) => {
-      res.write(error.message);
-      res.end();
-    });
+  try {
+    await countStudents(databasePath);
+    res.end();
+  } catch (error) {
+    res.write(error.message);
+    res.end();
+  }
 });
 
 app.listen(PORT, () => {
