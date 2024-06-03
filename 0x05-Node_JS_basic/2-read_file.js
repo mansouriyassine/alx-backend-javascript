@@ -9,7 +9,7 @@ function countStudents(path) {
       throw new Error('Cannot load the database');
     }
 
-    const students = lines.slice(1); // Skip the header line
+    const students = lines.slice(1);
     const totalStudents = students.length;
 
     console.log(`Number of students: ${totalStudents}`);
@@ -17,7 +17,7 @@ function countStudents(path) {
     const fields = {};
 
     students.forEach((student) => {
-      const [firstname, , , field] = student.split(','); // Ignore lastname and age
+      const [firstname, , , field] = student.split(',');
       if (!fields[field]) {
         fields[field] = [];
       }
