@@ -3,6 +3,14 @@ const { expect } = require('chai');
 const app = require('./api');
 
 describe('Server', function() {
+  before(function() {
+    app.listen(7865);
+  });
+
+  after(function() {
+    app.close();
+  });
+
   describe('Index page', function() {
     it('Correct status code?', function(done) {
       request.get('http://localhost:7865/', function(error, response, body) {
