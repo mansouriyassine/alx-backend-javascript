@@ -3,12 +3,17 @@ const { expect } = require('chai');
 const app = require('./api');
 
 describe('Server', function() {
-  before(function() {
-    app.listen(7865);
+  let server;
+
+  before(function(done) {
+    server = app.listen(7865, function() {
+      console.log('API available on localhost port 7865');
+      done();
+    });
   });
 
-  after(function() {
-    app.close();
+  after(function(done) {
+    server.close(done);
   });
 
   describe('Index page', function() {
