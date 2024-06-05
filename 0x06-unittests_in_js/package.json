@@ -2,15 +2,16 @@
   "name": "0x06-unittests_in_js",
   "version": "1.0.0",
   "description": "0x06-unittests_in_js",
-  "main": "2-calcul_chai.js",
+  "main": "3-payment.js",
   "scripts": {
-    "test": "mocha 0-calcul.test.js 1-calcul.test.js 2-calcul_chai.test.js"
+    "test": "mocha 0-calcul.test.js 1-calcul.test.js 2-calcul_chai.test.js 3-payment.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.4.1",
-    "mocha": "^10.4.0"
+    "chai": "^4.3.4",
+    "mocha": "^10.4.0",
+    "sinon": "^15.2.1"
   }
 }
