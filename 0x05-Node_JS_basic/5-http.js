@@ -16,8 +16,8 @@ const app = http.createServer((req, res) => {
 
     const databasePath = process.argv[2];
     countStudents(databasePath)
-      .then((studentsData) => {
-        res.write(studentsData);
+      .then((data) => {
+        res.write(data);
         res.end();
       })
       .catch((error) => {
