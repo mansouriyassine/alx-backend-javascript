@@ -13,7 +13,10 @@ describe('Server', function() {
   });
 
   after(function(done) {
-    server.close(done);
+    server.close(function() {
+      console.log('Server closed');
+      done();
+    });
   });
 
   describe('Index page', function() {
