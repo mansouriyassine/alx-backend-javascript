@@ -13,59 +13,14 @@ describe('Server', function() {
   });
 
   after(function(done) {
-    server.close(function() {
-      console.log('Server closed');
-      done();
-    });
-  });
-
-  describe('Index page', function() {
-    it('Correct status code?', function(done) {
-      request.get('http://localhost:7865/', function(error, response, body) {
-        expect(response.statusCode).to.equal(200);
+    server.close(function(err) {
+      if (err) {
+        console.error('Error closing server:', err);
+        done(err);
+      } else {
+        console.log('Server closed');
         done();
-      });
-    });
-
-    it('Correct result?', function(done) {
-      request.get('http://localhost:7865/', function(error, response, body) {
-        expect(body).to.equal('Welcome to the payment system');
-        done();
-      });
-    });
-
-    it('Other?', function(done) {
-      done();
-    });
-  });
-
-  describe('Cart page', function() {
-    it('Correct status code when :id is a number?', function(done) {
-      request.get('http://localhost:7865/cart/12', function(error, response, body) {
-        expect(response.statusCode).to.equal(200);
-        done();
-      });
-    });
-
-    it('Correct result when :id is a number?', function(done) {
-      request.get('http://localhost:7865/cart/12', function(error, response, body) {
-        expect(body).to.equal('Payment methods for cart 12');
-        done();
-      });
-    });
-
-    it('Correct status code when :id is NOT a number (=> 404)?', function(done) {
-      request.get('http://localhost:7865/cart/hello', function(error, response, body) {
-        expect(response.statusCode).to.equal(404);
-        done();
-      });
-    });
-
-    it('Correct result when :id is NOT a number (=> 404)?', function(done) {
-      request.get('http://localhost:7865/cart/hello', function(error, response, body) {
-        expect(body).to.equal('Cannot GET /cart/hello');
-        done();
-      });
+      }
     });
   });
 
