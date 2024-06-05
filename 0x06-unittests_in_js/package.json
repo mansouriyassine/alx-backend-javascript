@@ -2,9 +2,9 @@
   "name": "0x06-unittests_in_js",
   "version": "1.0.0",
   "description": "0x06-unittests_in_js",
-  "main": "0-calcul.js",
+  "main": "1-calcul.js",
   "scripts": {
-    "test": "mocha 0-calcul.test.js"
+    "test": "mocha 0-calcul.test.js 1-calcul.test.js"
   },
   "keywords": [],
   "author": "",
